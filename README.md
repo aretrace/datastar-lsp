@@ -5,12 +5,12 @@ Language server for [Datastar](https://data-star.dev) hypermedia framework.
 ## Features
 
 - **Diagnostics** - unknown attributes, missing keys/values, undefined signals/actions, invalid modifiers
-- **Hover** - documentation for attributes, signals, actions, and modifiers
-- **Completions** - `$` signals, `@` actions, `:` keys, `__` modifiers
-- **Go-to-definition** - `$signal` → `data-signals:signal` (cross-file)
-- **Find references** - all `$signal` usages across open files
-- **Rename** - rename signal across all open files
-- **Code actions** - define undefined signals, add missing values/keys
+- **Hover** - per-part docs for plugin name, key, modifier, and value (e.g. `data-signals__ifmissing` shows modifier description)
+- **Completions** - `$` signals, `@` actions, `data-` attributes, `:` keys, `__` modifiers, event types
+- **Go-to-definition** - `$signal` to `data-signals:signal` across all indexed files
+- **Find references** - all `$signal` usages across the workspace
+- **Rename** - rename a signal everywhere (camelCase/kebab-case aware)
+- **Code actions** - quick-fix to define undefined signals, add missing values/keys
 
 ## Supported Languages
 
@@ -38,11 +38,10 @@ code --install-extension datastar-lsp-*.vsix
 ### Zed
 
 ```bash
-git clone https://github.com/hyperpuncher/datastar-lsp \
-  ~/.config/zed/extensions/datastar
+git clone https://github.com/hyperpuncher/datastar-lsp
 ```
 
-Then in Zed, run `zed: install cli` and `zed: reload extensions`.
+Then in Zed, run `zed: install dev extension` and select the `datastar-lsp/zed/` directory.
 
 ## Requirements
 
